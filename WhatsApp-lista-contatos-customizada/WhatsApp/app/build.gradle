@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        applicationId "whatsapp.cursoandroid.com.whatsapp"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'com.android.support:design:23.4.0'
+    implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
+    implementation 'com.google.firebase:firebase-database:9.6.1'
+    implementation 'com.google.firebase:firebase-auth:9.6.1'
+    implementation 'com.android.support:support-v4:23.4.0'
+}
+
+
+
+apply plugin: 'com.google.gms.google-services'
